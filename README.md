@@ -1,4 +1,4 @@
-# SAML Attribute Modifier
+# SAML Custom Assertion Builder
 ---
 This component allows to retrieve claims from a custom attribute store when building the SAML authentication response.
 

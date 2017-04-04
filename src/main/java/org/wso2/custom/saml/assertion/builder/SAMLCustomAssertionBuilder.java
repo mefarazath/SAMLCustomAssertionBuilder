@@ -49,6 +49,8 @@ public class SAMLCustomAssertionBuilder extends DefaultSAMLAssertionBuilder {
      */
     protected Map<String, String> getClaimsFromExternalAttributeStore(AuthenticatedUser user,
                                                                       String serviceProviderName) {
+
+        log.info("Retrieving claims for user : " + user.getAuthenticatedSubjectIdentifier() + ", SP: " + serviceProviderName);
         // We can call an external API and get the claims
         Map<String, String> claims = new HashMap<>();
         claims.put("https://custom.claim.org/rewards", "none");
@@ -72,7 +74,5 @@ public class SAMLCustomAssertionBuilder extends DefaultSAMLAssertionBuilder {
         } catch (IdentityApplicationManagementException e) {
             throw new IdentityException("Error retrieving SP Name for SAML Issuer value : " + samlIssuer, e);
         }
-
-
     }
 }
