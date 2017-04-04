@@ -51,7 +51,8 @@ public class SAMLCustomAssertionBuilder extends DefaultSAMLAssertionBuilder {
                                                                       String serviceProviderName) {
         // We can call an external API and get the claims
         Map<String, String> claims = new HashMap<>();
-        claims.put("my_custom_claim", "custom_claim_value");
+        claims.put("https://custom.claim.org/rewards", "none");
+        claims.put("https://custom.claim.org/status", "inactive");
         return claims;
     }
 
